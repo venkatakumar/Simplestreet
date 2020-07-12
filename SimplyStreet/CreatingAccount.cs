@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace SimplyStreet
 {
-    public class Class1
+    public class CreatingAccount
     {
         public IWebDriver driver;
         [Test]
