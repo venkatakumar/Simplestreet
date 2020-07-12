@@ -22,27 +22,24 @@ namespace SimplyStreet
             driver.FindElement(By.CssSelector("button[data-cy-id='button-email-login']")).Click();
             Thread.Sleep(2000);
             driver.FindElement(By.CssSelector("button[data-cy-id='button-register']")).Click();
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
             Thread.Sleep(2000);
             EnterEmail();
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            Thread.Sleep(2000);
             SetPassword();
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            Thread.Sleep(2000);
             ClickSubmit();
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
             Thread.Sleep(2000);
             EnterFirstName();
             Thread.Sleep(2000);
             ClickSubmit();
-            Thread.Sleep(1000);
+            Thread.Sleep(3000);
             ClickNext();
         }
 
         public async void EnterEmail()
         {
             var email = driver.FindElement(By.CssSelector("input[name='emailAddress']"));
-            await Task.Run(() => email.Click());
-            email.SendKeys("kumarvenkata2+" + RandomNumber() + "@gmail.com");
+            await Task.Run(() => email.SendKeys("youremail+" + RandomNumber() + "@gmail.com"));
         }
 
         public int RandomNumber()
@@ -54,8 +51,8 @@ namespace SimplyStreet
         public async void SetPassword()
         {
             var password = driver.FindElement(By.CssSelector("[name='password']"));
-            await Task.Run(() => password.Click());
-            password.SendKeys("IntelligentInvestors12345");
+            //await Task.Run(() => password.Click());
+            await Task.Run(() => password.SendKeys("IntelligentInvestors12345"));
         }
 
         public async void ClickSubmit()
@@ -67,7 +64,7 @@ namespace SimplyStreet
         public async void EnterFirstName()
         {
             var firstname = driver.FindElement(By.CssSelector("input[data-cy-id='firstname']"));
-            await Task.Run(() => firstname.SendKeys("myname"));
+            await Task.Run(() => firstname.SendKeys("Investor"));
         }
 
         public void ClickNext()
