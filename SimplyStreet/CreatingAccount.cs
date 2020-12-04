@@ -16,7 +16,7 @@ namespace SimplyStreet
         [Test]
         public void NavigateAndSetupAccount()
         {
-            driver = new ChromeDriver(@"C:\Users\Tummy Mumma\Documents\webdriver");
+            driver = new ChromeDriver(@"C:\Users\\Documents\webdriver");
             driver.Navigate().GoToUrl("https://simplywall.st/welcome");
             Thread.Sleep(1000);
             driver.FindElement(By.CssSelector("button[data-cy-id='button-email-login']")).Click();
